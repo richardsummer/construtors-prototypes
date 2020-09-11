@@ -37,8 +37,29 @@ function expect(target) {
 //
 // ONLY ADD CODE TO THIS SECTION
 
+// Creates a new object with the constuctor function
 
+function Dog({name, color, hungry = true, status = 'normal'} = {}){
+  this.name = name;
+  this.color = color;
+  this.hungry = hungry;
+  this.status = status;
+};
 
+function Human({name, cool = false} = {}){
+  this.name = name;
+  this.cool = cool;
+};
+
+// Accesses the prototype chain to apply new properties
+
+Human.prototype.pet = function(dog){
+  dog.status = 'happy'
+};
+
+Human.prototype.feed = function(dog){
+  dog.hungry = false;
+};
 
 //        __
 //   ____/ /___  ____ ______
